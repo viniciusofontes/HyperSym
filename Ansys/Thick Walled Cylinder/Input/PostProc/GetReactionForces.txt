@@ -1,0 +1,54 @@
+! GetReactionForces -------------------------------------------------------
+! Article: Fontes, V.O., Leitão, A.X., & Pereira, A. (2023). 
+!          HyperSym: a Matlab code for symbolic differentiation of 
+!          ready-to-use tensors in hyperelastic finite element analysis, 
+!          Computer Applications in Engineering Education.
+!          DOI: https://doi.org/xx.xxxx/xxxxxx-xxx-xxxx-x
+!
+! References:
+! [1] Kim, N.-H. (2014). Introduction to Nonlinear Finite Element Analysis.
+!     Springer Science & Business Media, pp. 214-216.
+! [2] ANSYS, Inc. (2021). Ansys Mechanical APDL Verification Manual, 
+!     pp. 157-158. Example VM56: Hyperelastic Thick Cylinder Under Internal
+!     Pressure.
+! [3] Oden, J.T. (1972). Finite Elements of Nonlinear Continua, Courier 
+!     Corporation, pp. 325-331.
+! -------------------------------------------------------------------------
+
+! Multiply forces by -1 since reaction force is the negative of force
+
+CMSEL,S,PresNode
+*GET,NNode,NODE,,COUNT
+*GET,nd,NODE,,NUM,MIN
+
+! Prealloaction:    
+*DIM,NReact,ARRAY,NNode,7
+
+*DO,nn,1,NNode,1
+	NReact(nn,1) = nd
+	NReact(nn,2) = NX(nd)
+	NReact(nn,3) = NY(nd)
+	NReact(nn,4) = NZ(nd)
+	
+	*GET,NReact(nn,5),NODE,nd,RF,FX    ! gets the nodal reaction forces
+	*GET,NReact(nn,6),NODE,nd,RF,FY
+	*GET,NReact(nn,7),NODE,nd,RF,FZ
+	
+	nd = NDNEXT(nd)          ! next node number in the selected set
+*ENDDO
+
+*VOPER,NReact(1,5),NReact(1,5),MULT,-1 ! multiplies the array of rection forces by '-1'
+*VOPER,NReact(1,6),NReact(1,6),MULT,-1
+*VOPER,NReact(1,7),NReact(1,7),MULT,-1
+
+! The matrix must be ordered to save the correct '.txt' file
+*DIM,Ordering,,NNode    ! ordering index array
+*MOPER,Ordering(1),NReact(1,1),SORT,,4,3,2,1     ! ordering column
+
+! Write data in specific file:
+*CFOPEN,'Results_ReactionForce_%MatModel%','txt'
+*VWRITE,'Node #','x coord.','y coord.','z coord.','RX','RY','RZ'
+%6S %9S %9S %9S %7S %7S %7S
+*VWRITE,NReact(1,1),NReact(1,2),NReact(1,3),NReact(1,4),NReact(1,5),NReact(1,6),NReact(1,7)
+%6D %9.4F %9.4F %9.4F %7.2F %7.2F %7.2F
+*CFCLOSE

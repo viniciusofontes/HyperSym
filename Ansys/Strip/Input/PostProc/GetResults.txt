@@ -1,0 +1,153 @@
+! GetResults ---------------------------------------------------------------
+! Article: Fontes, V.O., Leitão, A.X., & Pereira, A. (2023). 
+!          HyperSym: a Matlab code for symbolic differentiation of 
+!          ready-to-use tensors in hyperelastic finite element analysis, 
+!          Computer Applications in Engineering Education.
+!          DOI: https://doi.org/xx.xxxx/xxxxxx-xxx-xxxx-x
+!
+! References:
+! [1] Kim, N.-H. (2014). Introduction to Nonlinear Finite Element analysis.
+!     Springer Science & Business Media, pp. 214-216.
+! [2] Oden, J.T. (1972). Finite Elements of Nonlinear Continua, Courier 
+!     Corporation, pp. 304-308.
+! -------------------------------------------------------------------------
+
+/POST1
+
+/VIEW,1,0.75,-0.5,0.4    ! sets the view mode
+/EXPAND,4,POLAR,HALF,,90 ! expand to view the full model
+    
+/DIST,1,6,1        ! adjusts zoom
+/ANG,1,-72  
+
+/DSCALE,1,1        ! scale factor
+PLDISP,2           ! plots deformed shape
+
+/AUTO,1
+/REPLOT,FAST
+
+! Result in the Reference Node --------------------------------------------------------------------
+! Preallocation:
+*DIM,NodalCoord,ARRAY,3,NN
+*DIM,NodalDisp,ARRAY,3,NN
+*DIM,NodalStrain,ARRAY,8,NN
+*DIM,NodalStress,ARRAY,8,NN
+*DIM,Name,CHAR,1,NN
+
+SET,LAST           ! saves only the final (converged) data
+
+*DO,nd,1,NN,1
+	NodalCoord(1,nd) = NX(NN%nd%)
+	NodalCoord(2,nd) = NY(NN%nd%)
+	NodalCoord(3,nd) = NZ(NN%nd%)
+	
+	NodalDisp(1,nd) = UX(NN%nd%)
+	NodalDisp(2,nd) = UY(NN%nd%)
+	NodalDisp(3,nd) = UZ(NN%nd%)
+
+	*GET,NodalStrain(1,nd),NODE,NN%nd%,EPTO,X
+	*GET,NodalStrain(2,nd),NODE,NN%nd%,EPTO,Y
+	*GET,NodalStrain(3,nd),NODE,NN%nd%,EPTO,Z
+	*GET,NodalStrain(4,nd),NODE,NN%nd%,EPTO,XY
+	*GET,NodalStrain(5,nd),NODE,NN%nd%,EPTO,YZ
+	*GET,NodalStrain(6,nd),NODE,NN%nd%,EPTO,XZ
+	*GET,NodalStrain(7,nd),NODE,NN%nd%,EPTO,EQV
+	*GET,NodalStrain(8,nd),NODE,NN%nd%,EPTO,INT
+	
+	*GET,NodalStress(1,nd),NODE,NN%nd%,S,X
+	*GET,NodalStress(2,nd),NODE,NN%nd%,S,Y
+	*GET,NodalStress(3,nd),NODE,NN%nd%,S,Z
+	*GET,NodalStress(4,nd),NODE,NN%nd%,S,XY
+	*GET,NodalStress(5,nd),NODE,NN%nd%,S,YZ
+	*GET,NodalStress(6,nd),NODE,NN%nd%,S,XZ
+	*GET,NodalStress(7,nd),NODE,NN%nd%,S,EQV
+	*GET,NodalStress(8,nd),NODE,NN%nd%,S,INT
+	
+	*IF,nd,EQ,1,THEN
+		Name(1,nd) = '1st'
+	*ELSEIF,nd,EQ,2,THEN
+		Name(1,nd) = '2nd'
+	*ELSEIF,nd,EQ,3,THEN
+		Name(1,nd) = '3rd'
+	*ELSE
+		Name(1,nd) = STRCAT(CHRVAL(nd),'th')
+	*ENDIF
+*ENDDO
+
+! Write data in specific file:
+*CFOPEN,'Results_Selected_Nodes_%MatModel%_Mesh=%Ne%x%Ne%x%Net%','txt'
+*VWRITE,'Nodal Data'
+%10S
+*VWRITE,'****************'
+%14S
+
+*DO,nd,1,NN,1
+	*IF,nd,GT,1,THEN
+		*VWRITE,'****************'
+%14S
+	*ENDIF
+
+	*VWRITE,Name(1,nd),'Node'
+%3S %4S 
+	*VWRITE,'X','Y','Z'
+%8S %8S %8S
+	*VWRITE,NodalCoord(1,nd),NodalCoord(2,nd),NodalCoord(3,nd)
+%8.4F %8.4F %8.4F
+	*VWRITE,'----------------------------------'
+%14S
+	*VWRITE,'UX','UY','UZ'
+%8S %8S %8S
+	*VWRITE,NodalDisp(1,nd),NodalDisp(2,nd),NodalDisp(3,nd)
+%8.4F %8.4F %8.4F
+	*VWRITE,'----------------------------------'
+%14S
+	*VWRITE,'Ex','Ey','Ez','Exy','Eyz','Exz','EMises','EInt'
+%8S %8S %8S %8S %8S %8S %8S %8S
+	*VWRITE,NodalStrain(1,nd),NodalStrain(2,nd),NodalStrain(3,nd),NodalStrain(4,nd),NodalStrain(5,nd),NodalStrain(6,nd),NodalStrain(7,nd),NodalStrain(8,nd)
+%8.4F %8.4F %8.4F %8.4F %8.4F %8.4F %8.4F %8.4F
+	*VWRITE,'----------------------------------'
+%14S
+	*VWRITE,'Sx','Sy','Sz','Sxy','Syz','Sxz','SMises','SInt'
+%8S %8S %8S %8S %8S %8S %8S %8S
+	*VWRITE,NodalStress(1,nd),NodalStress(2,nd),NodalStress(3,nd),NodalStress(4,nd),NodalStress(5,nd),NodalStress(6,nd),NodalStress(7,nd),NodalStress(8,nd)
+%8.4F %8.4F %8.4F %8.4F %8.4F %8.4F %8.4F %8.4F
+*ENDDO
+
+*CFCLOSE
+
+! Stress Distribution =============================================================================
+!/INPUT,'StressField','txt',../Input/PostProc
+
+! Reaction force ==================================================================================
+NSEL,S,LOC,X,L/2   ! desired nodes
+
+*GET,NNode,NODE,,COUNT
+*GET,nd,NODE,,NUM,MIN
+
+*DIM,IntForce,ARRAY,NNode,6
+
+*DO,rf,1,NNode
+	*GET,IntForce(rf,1),NODE,nd,RF,FX
+	*GET,IntForce(rf,2),NODE,nd,RF,FY
+	*GET,IntForce(rf,3),NODE,nd,RF,FZ
+	*GET,IntForce(rf,4),NODE,nd,RF,MX
+	*GET,IntForce(rf,5),NODE,nd,RF,MY
+	*GET,IntForce(rf,6),NODE,nd,RF,MZ
+		
+	nd = NDNEXT(nd)     ! next node number in the selected set
+*ENDDO
+
+*VSCFUN,RFx,SUM,IntForce(1,1)
+*VSCFUN,RFy,SUM,IntForce(1,2)
+*VSCFUN,RFz,SUM,IntForce(1,3)
+*VSCFUN,RMx,SUM,IntForce(1,4)
+*VSCFUN,RMy,SUM,IntForce(1,5)
+*VSCFUN,RMz,SUM,IntForce(1,6)
+
+! Write data in specific file:
+*CFOPEN,'Results_IntForce_%MatModel%_Mesh=%Ne%x%Ne%x%Net%','txt'
+*VWRITE,'Fx','Fy','Fz','Mx','My','Mz'
+%9S %8S %8S %8S %8S %8S
+*VWRITE,RFx,RFy,RFz,RMx,RMy,RMz
+%9.4F %8.4F %8.4F %8.4F %8.4F %8.4F
+*CFCLOSE
