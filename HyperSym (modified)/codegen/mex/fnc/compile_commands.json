@@ -1,0 +1,56 @@
+[
+  {
+    "directory": "C:\\Users\\vinic\\Dropbox\\PUC\\Artigos\\Modelos Hiperelásticos e Matemática Simbólica no MATLAB\\Códigos\\NLFEA (modified) + HyperSym\\HyperSym [Modified]\\codegen\\mex\\fnc",
+    "command": "icl /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE -I\"C:\\Program Files\\MATLAB\\R2023a\\extern\\include\" -I\"C:\\Program Files\\MATLAB\\R2023a\\simulink\\include\" /Qdiag-disable:10441 /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /DNDEBUG -Qoption,cpp,--unicode_source_kind,\"UTF-8\" /Qstd=c99 /I \".\" /I \"C:\\Users\\vinic\\Dropbox\\PUC\\Artigos\\Modelos Hiperelásticos e Matemática Simbólica no MATLAB\\Códigos\\NLFEA (modified) + HyperSym\\HyperSym [Modified]\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023a\\extern\\include\" /I \".\" -DMODEL=fnc_mex   fnc_data.c /Fobuild\\win64\\fnc_data.obj",
+    "file": "fnc_data.c",
+    "output": "build/win64/fnc_data.obj"
+  },
+  {
+    "directory": "C:\\Users\\vinic\\Dropbox\\PUC\\Artigos\\Modelos Hiperelásticos e Matemática Simbólica no MATLAB\\Códigos\\NLFEA (modified) + HyperSym\\HyperSym [Modified]\\codegen\\mex\\fnc",
+    "command": "icl /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE -I\"C:\\Program Files\\MATLAB\\R2023a\\extern\\include\" -I\"C:\\Program Files\\MATLAB\\R2023a\\simulink\\include\" /Qdiag-disable:10441 /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /DNDEBUG -Qoption,cpp,--unicode_source_kind,\"UTF-8\" /Qstd=c99 /I \".\" /I \"C:\\Users\\vinic\\Dropbox\\PUC\\Artigos\\Modelos Hiperelásticos e Matemática Simbólica no MATLAB\\Códigos\\NLFEA (modified) + HyperSym\\HyperSym [Modified]\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023a\\extern\\include\" /I \".\" -DMODEL=fnc_mex   rt_nonfinite.c /Fobuild\\win64\\rt_nonfinite.obj",
+    "file": "rt_nonfinite.c",
+    "output": "build/win64/rt_nonfinite.obj"
+  },
+  {
+    "directory": "C:\\Users\\vinic\\Dropbox\\PUC\\Artigos\\Modelos Hiperelásticos e Matemática Simbólica no MATLAB\\Códigos\\NLFEA (modified) + HyperSym\\HyperSym [Modified]\\codegen\\mex\\fnc",
+    "command": "icl /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE -I\"C:\\Program Files\\MATLAB\\R2023a\\extern\\include\" -I\"C:\\Program Files\\MATLAB\\R2023a\\simulink\\include\" /Qdiag-disable:10441 /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /DNDEBUG -Qoption,cpp,--unicode_source_kind,\"UTF-8\" /Qstd=c99 /I \".\" /I \"C:\\Users\\vinic\\Dropbox\\PUC\\Artigos\\Modelos Hiperelásticos e Matemática Simbólica no MATLAB\\Códigos\\NLFEA (modified) + HyperSym\\HyperSym [Modified]\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023a\\extern\\include\" /I \".\" -DMODEL=fnc_mex   fnc_initialize.c /Fobuild\\win64\\fnc_initialize.obj",
+    "file": "fnc_initialize.c",
+    "output": "build/win64/fnc_initialize.obj"
+  },
+  {
+    "directory": "C:\\Users\\vinic\\Dropbox\\PUC\\Artigos\\Modelos Hiperelásticos e Matemática Simbólica no MATLAB\\Códigos\\NLFEA (modified) + HyperSym\\HyperSym [Modified]\\codegen\\mex\\fnc",
+    "command": "icl /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE -I\"C:\\Program Files\\MATLAB\\R2023a\\extern\\include\" -I\"C:\\Program Files\\MATLAB\\R2023a\\simulink\\include\" /Qdiag-disable:10441 /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /DNDEBUG -Qoption,cpp,--unicode_source_kind,\"UTF-8\" /Qstd=c99 /I \".\" /I \"C:\\Users\\vinic\\Dropbox\\PUC\\Artigos\\Modelos Hiperelásticos e Matemática Simbólica no MATLAB\\Códigos\\NLFEA (modified) + HyperSym\\HyperSym [Modified]\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023a\\extern\\include\" /I \".\" -DMODEL=fnc_mex   fnc_terminate.c /Fobuild\\win64\\fnc_terminate.obj",
+    "file": "fnc_terminate.c",
+    "output": "build/win64/fnc_terminate.obj"
+  },
+  {
+    "directory": "C:\\Users\\vinic\\Dropbox\\PUC\\Artigos\\Modelos Hiperelásticos e Matemática Simbólica no MATLAB\\Códigos\\NLFEA (modified) + HyperSym\\HyperSym [Modified]\\codegen\\mex\\fnc",
+    "command": "icl /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE -I\"C:\\Program Files\\MATLAB\\R2023a\\extern\\include\" -I\"C:\\Program Files\\MATLAB\\R2023a\\simulink\\include\" /Qdiag-disable:10441 /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /DNDEBUG -Qoption,cpp,--unicode_source_kind,\"UTF-8\" /Qstd=c99 /I \".\" /I \"C:\\Users\\vinic\\Dropbox\\PUC\\Artigos\\Modelos Hiperelásticos e Matemática Simbólica no MATLAB\\Códigos\\NLFEA (modified) + HyperSym\\HyperSym [Modified]\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023a\\extern\\include\" /I \".\" -DMODEL=fnc_mex   fnc.c /Fobuild\\win64\\fnc.obj",
+    "file": "fnc.c",
+    "output": "build/win64/fnc.obj"
+  },
+  {
+    "directory": "C:\\Users\\vinic\\Dropbox\\PUC\\Artigos\\Modelos Hiperelásticos e Matemática Simbólica no MATLAB\\Códigos\\NLFEA (modified) + HyperSym\\HyperSym [Modified]\\codegen\\mex\\fnc",
+    "command": "icl /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE -I\"C:\\Program Files\\MATLAB\\R2023a\\extern\\include\" -I\"C:\\Program Files\\MATLAB\\R2023a\\simulink\\include\" /Qdiag-disable:10441 /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /DNDEBUG -Qoption,cpp,--unicode_source_kind,\"UTF-8\" /Qstd=c99 /I \".\" /I \"C:\\Users\\vinic\\Dropbox\\PUC\\Artigos\\Modelos Hiperelásticos e Matemática Simbólica no MATLAB\\Códigos\\NLFEA (modified) + HyperSym\\HyperSym [Modified]\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023a\\extern\\include\" /I \".\" -DMODEL=fnc_mex   interface\\_coder_fnc_api.c /Fobuild\\win64\\_coder_fnc_api.obj",
+    "file": "interface/_coder_fnc_api.c",
+    "output": "build/win64/_coder_fnc_api.obj"
+  },
+  {
+    "directory": "C:\\Users\\vinic\\Dropbox\\PUC\\Artigos\\Modelos Hiperelásticos e Matemática Simbólica no MATLAB\\Códigos\\NLFEA (modified) + HyperSym\\HyperSym [Modified]\\codegen\\mex\\fnc",
+    "command": "icl /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE -I\"C:\\Program Files\\MATLAB\\R2023a\\extern\\include\" -I\"C:\\Program Files\\MATLAB\\R2023a\\simulink\\include\" /Qdiag-disable:10441 /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /DNDEBUG -Qoption,cpp,--unicode_source_kind,\"UTF-8\" /Qstd=c99 /I \".\" /I \"C:\\Users\\vinic\\Dropbox\\PUC\\Artigos\\Modelos Hiperelásticos e Matemática Simbólica no MATLAB\\Códigos\\NLFEA (modified) + HyperSym\\HyperSym [Modified]\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023a\\extern\\include\" /I \".\" -DMODEL=fnc_mex   interface\\_coder_fnc_mex.c /Fobuild\\win64\\_coder_fnc_mex.obj",
+    "file": "interface/_coder_fnc_mex.c",
+    "output": "build/win64/_coder_fnc_mex.obj"
+  },
+  {
+    "directory": "C:\\Users\\vinic\\Dropbox\\PUC\\Artigos\\Modelos Hiperelásticos e Matemática Simbólica no MATLAB\\Códigos\\NLFEA (modified) + HyperSym\\HyperSym [Modified]\\codegen\\mex\\fnc",
+    "command": "icl /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE -I\"C:\\Program Files\\MATLAB\\R2023a\\extern\\include\" -I\"C:\\Program Files\\MATLAB\\R2023a\\simulink\\include\" /Qdiag-disable:10441 /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /DNDEBUG -Qoption,cpp,--unicode_source_kind,\"UTF-8\" /Qstd=c99 /I \".\" /I \"C:\\Users\\vinic\\Dropbox\\PUC\\Artigos\\Modelos Hiperelásticos e Matemática Simbólica no MATLAB\\Códigos\\NLFEA (modified) + HyperSym\\HyperSym [Modified]\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023a\\extern\\include\" /I \".\" -DMODEL=fnc_mex   interface\\_coder_fnc_info.c /Fobuild\\win64\\_coder_fnc_info.obj",
+    "file": "interface/_coder_fnc_info.c",
+    "output": "build/win64/_coder_fnc_info.obj"
+  },
+  {
+    "directory": "C:\\Users\\vinic\\Dropbox\\PUC\\Artigos\\Modelos Hiperelásticos e Matemática Simbólica no MATLAB\\Códigos\\NLFEA (modified) + HyperSym\\HyperSym [Modified]\\codegen\\mex\\fnc",
+    "command": "icl /c /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE -I\"C:\\Program Files\\MATLAB\\R2023a\\extern\\include\" -I\"C:\\Program Files\\MATLAB\\R2023a\\simulink\\include\" /Qdiag-disable:10441 /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /DNDEBUG -Qoption,cpp,--unicode_source_kind,\"UTF-8\" /Qstd=c99 /I \".\" /I \"C:\\Users\\vinic\\Dropbox\\PUC\\Artigos\\Modelos Hiperelásticos e Matemática Simbólica no MATLAB\\Códigos\\NLFEA (modified) + HyperSym\\HyperSym [Modified]\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2023a\\extern\\include\" /I \".\" -DMODEL=fnc_mex   \"C:\\Program Files\\MATLAB\\R2023a\\extern\\version\\c_mexapi_version.c\" /Fobuild\\win64\\c_mexapi_version.obj",
+    "file": "C:/Program Files/MATLAB/R2023a/extern/version/c_mexapi_version.c",
+    "output": "build/win64/c_mexapi_version.obj"
+  }
+]
