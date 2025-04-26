@@ -1,0 +1,24 @@
+! Mooney-Rivlin -----------------------------------------------------------
+! Article: Fontes, V.O., Leitão, A.X., & Pereira, A. (2023). 
+!          HyperSym: a Matlab code for symbolic differentiation of 
+!          ready-to-use tensors in hyperelastic finite element analysis, 
+!          Computer Applications in Engineering Education.
+!          DOI: https://doi.org/xx.xxxx/xxxxxx-xxx-xxxx-x
+!
+! References:
+! [1] Kim, N.-H. (2014). Introduction to Nonlinear Finite Element analysis.
+!     Springer Science & Business Media, pp. 214-216.
+! [2] Oden, J.T. (1972). Finite Elements of Nonlinear Continua, Courier 
+!     Corporation, pp. 304-308.
+! -------------------------------------------------------------------------
+
+! Mooney-Rivlin Material:
+! constant Cij (MPa), for i, j = 0 or 1
+C10 = 24*psi2MPa        ! (MPa)
+C01 = 1.5*psi2MPa       ! (MPa)
+K = 1.64                ! Bulk modulus (MPa)
+d = 2/K                 ! incompressibility parameter (1/MPa)
+
+! Material Properties
+TB,HYPER,1,,2,MOONEY    ! Mooney-Rivlin
+TBDATA,1,C10,C01,d

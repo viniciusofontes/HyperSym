@@ -1,9 +1,0 @@
-LIBRARY fnc_mex.mexw64
-EXPORTS
-mexFunction
-mexfilerequiredapiversion
-emlrtMexFcnProperties
-fnc
-fnc_initialize
-fnc_terminate
-fnc_atexit

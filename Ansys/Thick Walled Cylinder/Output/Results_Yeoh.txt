@@ -1,5 +1,0 @@
-Radial response at el # 1:
-
-       Ref. Value Ansys Value Ratio of Error
- Disp.   182.3720    165.6421        23.0699
-Stress    -0.8411     -0.9670         1.1496
